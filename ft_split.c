@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 14:37:14 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/01 17:04:29 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:50:59 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,24 @@ static int	count_words(char const *s, char c)
 	return (word);
 }
 
-void asig_word(char const *s, char c, char **dest)
+void	ft_free_all(int p, char **dest)
+{
+	while (p >= 0)
+	{
+		free(dest[p]);
+		p--;
+	}
+	free(dest);
+	dest = NULL;
+	return ;
+}
+
+void	asig_word(char const *s, char c, char **dest)
 {
 	int	p;
-	int i;
-	int len;
-	
+	int	i;
+	int	len;
+
 	i = 0;
 	p = 0;
 	while (s[i])
@@ -60,19 +72,14 @@ void asig_word(char const *s, char c, char **dest)
 		if (s[i] != c)
 		{
 			len = len_word(s, c, i);
-			dest[p] = ft_substr(s, i , len);
+			dest[p] = ft_substr(s, i, len);
 			i = i + len;
 			if (dest == NULL)
 			{
-				while (p >= 0)
-				{
-					free(dest[p]);
-					p--;
-				}
-				free(dest);
+				ft_free_all(p, dest);
 				return ;
 			}
-				p++;
+			p++;
 		}
 		if (s[i] != '\0')
 			(i)++;
@@ -92,7 +99,5 @@ char	**ft_split(char const *s, char c)
 	if (dest == NULL)
 		return (NULL);
 	asig_word(s, c, dest);
-	
 	return (dest);
 }
-

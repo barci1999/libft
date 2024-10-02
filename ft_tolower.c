@@ -6,12 +6,11 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:54:25 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/01 16:02:41 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:51:32 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 int	ft_tolower(int c)
 {

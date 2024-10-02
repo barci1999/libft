@@ -6,12 +6,12 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 12:27:54 by pablalva          #+#    #+#             */
-/*   Updated: 2024/09/30 16:53:58 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:51:46 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -20,11 +20,11 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	if(c == '\0')
-		return((char *)&s[i]);
+	if (c == '\0')
+		return ((char *)&s[i]);
 	while (i >= 0)
 	{
-		if (s[i] ==(char)c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i--;
 	}

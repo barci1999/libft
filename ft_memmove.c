@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:01:51 by pablalva          #+#    #+#             */
-/*   Updated: 2024/09/30 15:55:58 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:35:27 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (d < s || d >= s + n)
 	{
 		while (n--)
-		{
-			*d = *s;
-			d++;
-			s++;
-		}
+			*d++ = *s++;
 	}
 	else
 	{
