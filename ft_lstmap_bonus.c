@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 12:46:49 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/02 20:24:07 by pablalva         ###   ########.fr       */
+/*   Created: 2024/10/02 20:04:35 by pablalva          #+#    #+#             */
+/*   Updated: 2024/10/02 21:46:58 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	void	*p;
-
-	p = malloc(size * nmemb);
-	if (p == NULL)
+	t_list *newlst;
+	t_list *first;
+	void *temp;
+	first = NULL;
+	if (!lst || !f || !del)
 		return (NULL);
-	ft_memset(p, 0, size * nmemb);
-	return (p);
+	while (lst != NULL)
+	{
+		temp = f(lst->content);
+		newlst = ft_lstnew(temp);
+		if (newlst == NULL)
+		{
+			ft_lstclear(&first, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&first, newlst);
+		lst = lst->next;
+	}
+	return (first);
 }
-
- /*int	main(void)
-{
-	char *replica;
-	char *original;
-	size_t nmemb;
-
-	nmemb = 10;
-	replica = ft_calloc(, );
-	original = calloc( , );
-	printf("%p\n", replica);
-	printf("%p\n", original);
-
-	return(0);
-}*/
+ 

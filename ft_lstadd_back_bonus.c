@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 12:46:49 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/02 20:24:07 by pablalva         ###   ########.fr       */
+/*   Created: 2024/10/02 14:47:01 by pablalva          #+#    #+#             */
+/*   Updated: 2024/10/02 19:31:22 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <limits.h>
+#include"libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	void	*p;
-
-	p = malloc(size * nmemb);
-	if (p == NULL)
-		return (NULL);
-	ft_memset(p, 0, size * nmemb);
-	return (p);
+	t_list *temp;
+	if(!*lst || !new)
+	{
+		*lst = new;
+		return;
+	}
+	temp = ft_lstlast(*lst);
+	temp->next = new;
 }
-
- /*int	main(void)
-{
-	char *replica;
-	char *original;
-	size_t nmemb;
-
-	nmemb = 10;
-	replica = ft_calloc(, );
-	original = calloc( , );
-	printf("%p\n", replica);
-	printf("%p\n", original);
-
-	return(0);
-}*/

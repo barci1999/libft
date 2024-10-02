@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:48:27 by pablalva          #+#    #+#             */
-/*   Updated: 2024/09/26 17:52:29 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/02 19:15:54 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 /*int     main(void)
 {
 		size_t size = 11;
-		char dst[11]= "hola";
-		const char src[]= "pe5";
-		printf("%d\n",ft_strlcat(dst,src,size));
+		char dst[9]= "cocacola";
+		const char src[8]= "periplo";
+		printf("%zu\n",ft_strlcat(dst,src,size));
 	printf("%s", dst);
 }*/

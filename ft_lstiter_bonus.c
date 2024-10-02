@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 12:46:49 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/02 20:24:07 by pablalva         ###   ########.fr       */
+/*   Created: 2024/10/02 19:56:41 by pablalva          #+#    #+#             */
+/*   Updated: 2024/10/02 20:03:50 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	void	*p;
-
-	p = malloc(size * nmemb);
-	if (p == NULL)
-		return (NULL);
-	ft_memset(p, 0, size * nmemb);
-	return (p);
+	if(!lst || !f)
+		return;
+	while(lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
-
- /*int	main(void)
-{
-	char *replica;
-	char *original;
-	size_t nmemb;
-
-	nmemb = 10;
-	replica = ft_calloc(, );
-	original = calloc( , );
-	printf("%p\n", replica);
-	printf("%p\n", original);
-
-	return(0);
-}*/
