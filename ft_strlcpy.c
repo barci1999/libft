@@ -6,12 +6,11 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 09:47:20 by pablalva          #+#    #+#             */
-/*   Updated: 2024/09/30 16:07:07 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/03 15:51:11 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

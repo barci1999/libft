@@ -6,13 +6,13 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:40:27 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/02 11:51:58 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/03 15:59:01 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	funcion1(char const *s1, char const *set)
+static int	right_to_left(char const *s1, char const *set)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -29,7 +29,7 @@ int	funcion1(char const *s1, char const *set)
 	return (i);
 }
 
-unsigned int	funcion2(const char *s1, const char *set)
+unsigned int	left_to_right(const char *s1, const char *set)
 {
 	unsigned int	p;
 	unsigned int	j;
@@ -55,8 +55,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	i;
 	char			*s2;
 
-	i = funcion1(s1, set);
-	p = funcion2(s1, set);
+	i = right_to_left(s1, set);
+	p = left_to_right(s1, set);
 	if ((i <= p) && (i != 0))
 		s2 = ft_substr(s1, (i - 1), (p - i + 1));
 	else if (*set == '\0')

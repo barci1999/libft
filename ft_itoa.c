@@ -6,13 +6,13 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 10:14:32 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/02 11:33:26 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/03 15:56:33 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	positive_numbers(int n, int i, char *dest)
+static int	positive_numbers(int n, int i, char *dest)
 {
 	while (n > 0)
 	{
@@ -23,7 +23,7 @@ int	positive_numbers(int n, int i, char *dest)
 	return (n);
 }
 
-int	negative_numbers(int n, int *len)
+static int	negative_numbers(int n, int *len)
 {
 	if (n < 0)
 	{
@@ -33,7 +33,7 @@ int	negative_numbers(int n, int *len)
 	return (n);
 }
 
-char	*max(int n)
+static char	*max(int n)
 {
 	if (n == 2147483647)
 		return (ft_strdup("2147483647"));

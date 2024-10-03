@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:04:35 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/03 12:51:37 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/03 13:57:39 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *newlst;
-	t_list *first;
-	void *temp;
+	t_list	*newlst;
+	t_list	*first;
+	void	*temp;
+
 	first = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
@@ -35,4 +36,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (first);
 }
- 

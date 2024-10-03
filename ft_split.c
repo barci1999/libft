@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 14:37:14 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/03 13:15:22 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/03 13:57:07 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static char	**asig_word(char const *s, char c, char **dest)
 			(i)++;
 	}
 	dest[p] = NULL;
-	return(dest);
+	return (dest);
 }
 
 char	**ft_split(char const *s, char c)

@@ -6,7 +6,7 @@
 #    By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/24 10:29:24 by pablalva          #+#    #+#              #
-#    Updated: 2024/10/02 20:40:13 by pablalva         ###   ########.fr        #
+#    Updated: 2024/10/03 15:03:55 by pablalva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,10 +37,11 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
-	@echo "creando objetos.."
+	@echo "creando objetos..."
 	
 bonus: $(OBJS) $(OBJS_B)
 	@ar rc $(NAME) $(OBJS) $(OBJS_B)
+	@echo "creando objetos totales..."
 
 clean:
 	@rm -f $(OBJS) $(OBJS_B)
