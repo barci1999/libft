@@ -6,13 +6,13 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:55:27 by pablalva          #+#    #+#             */
-/*   Updated: 2024/09/30 20:08:33 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/03 10:42:10 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*d_less_len(char *dest, const char *s, unsigned int start, size_t len)
+static char	*d_less_len(char *dest, const char *s, unsigned int start, size_t len)
 {
 	size_t	d;
 

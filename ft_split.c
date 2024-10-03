@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 14:37:14 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/02 12:04:13 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/03 13:15:22 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	count_words(char const *s, char c)
 	return (word);
 }
 
-void	ft_free_all(int p, char **dest)
+static void	ft_free_all(int p, char **dest)
 {
 	while (p >= 0)
 	{
@@ -59,7 +59,7 @@ void	ft_free_all(int p, char **dest)
 	return ;
 }
 
-void	asig_word(char const *s, char c, char **dest)
+static char	**asig_word(char const *s, char c, char **dest)
 {
 	int	p;
 	int	i;
@@ -73,18 +73,19 @@ void	asig_word(char const *s, char c, char **dest)
 		{
 			len = len_word(s, c, i);
 			dest[p] = ft_substr(s, i, len);
-			i = i + len;
-			if (dest == NULL)
+			if (dest[p] == NULL)
 			{
 				ft_free_all(p, dest);
-				return ;
+				return (NULL);
 			}
+			i = i + len;
 			p++;
 		}
 		if (s[i] != '\0')
 			(i)++;
 	}
 	dest[p] = NULL;
+	return(dest);
 }
 
 char	**ft_split(char const *s, char c)
@@ -98,6 +99,5 @@ char	**ft_split(char const *s, char c)
 	dest = malloc((word_count + 1) * sizeof(char *));
 	if (dest == NULL)
 		return (NULL);
-	asig_word(s, c, dest);
-	return (dest);
+	return (asig_word(s, c, dest));
 }

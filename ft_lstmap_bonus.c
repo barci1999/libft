@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 20:04:35 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/02 21:46:58 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/03 12:51:37 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		newlst = ft_lstnew(temp);
 		if (newlst == NULL)
 		{
+			del(temp);
 			ft_lstclear(&first, del);
 			return (NULL);
 		}
