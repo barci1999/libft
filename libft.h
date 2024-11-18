@@ -6,7 +6,7 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 20:31:01 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/02 20:39:51 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/06 12:37:42 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 char				**ft_split(char const *s, char c);
+int					ft_str_isdigit(char *str);
 
 typedef struct s_list
 {

@@ -30,7 +30,7 @@ char	*ft_strchr(const char *s, int c)
 /*int main(void)
 {
   const char s[] = "hola que tal estas";
-  char c = 'e';
+  char c = 't';
   printf("%s",strchr(s,c));
   return (0);
 }*/
