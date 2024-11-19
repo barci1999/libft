@@ -55,6 +55,7 @@ void				ft_putnbr_fd(int n, int fd);
 char				**ft_split(char const *s, char c);
 int					ft_str_isdigit(char *str);
 double				ft_atof(char *nb);
+int					ft_str_is_dec(char *nb);
 
 typedef struct s_list
 {
